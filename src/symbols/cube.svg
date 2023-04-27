@@ -1,0 +1,16 @@
+<svg width="77" height="79" viewBox="0 0 77 79" fill="none" xmlns="http://www.w3.org/2000/svg">
+<circle cx="7.5" cy="22.5" r="7.5" fill="#3B3839"/>
+<circle cx="38.5" cy="7.5" r="7.5" fill="#3B3839"/>
+<circle cx="38.5" cy="37.5" r="7.5" fill="#3B3839"/>
+<circle cx="69.5" cy="22.5" r="7.5" fill="#3B3839"/>
+<rect x="16" y="16" width="14" height="4" transform="rotate(-30 16 16)" fill="#3B3839"/>
+<rect width="14" height="4" transform="matrix(-0.866025 -0.5 -0.5 0.866025 30.1244 32)" fill="#3B3839"/>
+<rect x="46" y="32" width="14" height="4" transform="rotate(-30 46 32)" fill="#3B3839"/>
+<circle cx="7.5" cy="56.5" r="7.5" fill="#3B3839"/>
+<circle cx="38.5" cy="71.5" r="7.5" fill="#3B3839"/>
+<circle cx="69.5" cy="56.5" r="7.5" fill="#3B3839"/>
+<rect x="16" y="50" width="14" height="4" transform="rotate(-30 16 50)" fill="#3B3839"/>
+<rect width="14" height="4" transform="matrix(-0.866025 -0.5 -0.5 0.866025 30.1244 66)" fill="#3B3839"/>
+<rect width="14" height="4" transform="matrix(0 -1 -1 0 40 62)" fill="#3B3839"/>
+<rect x="46" y="66" width="14" height="4" transform="rotate(-30 46 66)" fill="#3B3839"/>
+</svg>

@@ -1,0 +1,563 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>White Paper</title>
+    <link href="../styles/fonts.css" rel="stylesheet">
+    <link href="../css/style.css" rel="stylesheet">
+    <link href="../css/whitepaper.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link rel="shortcut icon" href="/src/logos/logo.svg" type="image/x-icon">
+</head>
+
+<body>
+    <header class="header">
+        <div class='container-fluid'>
+          <div class="header__body">
+            <a class="header__logo header__link" href="../index.html"><span class="logo_yellow">HADAR</span>CRYPTO<span class="logo_yellow">.</span>COM</a>
+            <div class="header__burger">
+              <span></span>
+            </div>
+            <nav class="header__menu">
+              <ul class="header__list">
+                <li>
+                  <a class="header__link" href="#">White Paper</a>
+                </li>
+                <li>
+                  <a class="header__link" href="../index.html#abouthadar">About Hadar</a>
+                </li>
+                <li>
+                  <a class="header__link" href="../index.html#roadmap">Road Map</a>
+                </li>
+                <li>
+                  <a class="header__link" href="../index.html#token">Token</a>
+                </li>
+                <li>
+                  <a class="header__link" href="../index.html#faq">FAQ</a>
+                </li>
+                <li class="menu_buy">
+                  <div class="menu_buy_wrap"><a target=”_blank” class="header__link" href=" https://pancakeswap.finance/swap?outputCurrency=0x16A1f04D58c3B51AC0cea9255fce2c77FCcCFD61">BUY ON PANCAKESWAP<span class="flare"></span></a></div>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </header>
+    <div class="main">
+        <div class="container">
+            <div class="title">HADAR WHITEPAPER</div>
+            <div class="first_text text _anim-items">The rise of blockchains as a new Internet infrastructure has led to developers
+                deploying tens of thousands of decentralized applications at rapidly growing rates. Unfortunately,
+                blockchain usage is not yet ubiquitous due to frequent outages, high costs, low throughput limits, and
+                numerous security concerns. To enable mass adoption in the web3 era, blockchain infrastructure needs to
+                follow the path of cloud infrastructure as a trusted, scalable, cost-efficient, and continually
+                improving platform for building widely-used applications.<br><br>
+
+                We present the Hadar blockchain, designed with scalability, safety, reliability, and upgradeability as
+                key principles, to address these challenges. The Hadar blockchain has been developed over the past three
+                years by over 350+ developers across the globe. It offers new and novel innovations in consensus, smart
+                contract design, system security, performance, and decentralization. The combination of these
+                technologies will provide a fundamental building block to bring Web3 to the masses:<br><br>
+
+                •First, the Hadar blockchain natively integrates and internally uses the Move language for fast and
+                secure transaction execution [2]. The Move prover, a formal verifier for smart contracts written in the
+                Move language, provides additional safeguards for contract invariants and behavior. This focus on
+                security allows developers to better protect their software from malicious entities.<br><br>
+
+                •Second, to achieve high throughput and low latency, the Hadar blockchain leverages a pipelined and
+                modular approach for the key stages of transaction processing. Specifically, transaction dissemination,
+                block metadata ordering, parallel transaction execution, batch storage, and ledger certification all
+                operate concurrently. This approach fully leverages all available physical resources, improves hardware
+                efficiency, and enables highly parallel execution.<br><br>
+
+                •Third, the Hadar modular architecture design supports client flexibility and optimizes for frequent and
+                instant upgrades. Moreover, to rapidly deploy new technology innovations and support new web3 use cases,
+                the Hadar blockchain provides embedded on-chain change management protocols.<br><br>
+
+                <span class="yellow"> 1. Introduction</span><br>
+                In the web2 version of the Internet, services such as messaging, social media, finance, gaming, shop-
+                ping, and audio/video streaming, are provided by centralized companies that control direct access to
+                user data (e.g., Google, Amazon, Apple, and Meta). These companies develop infrastructure using
+                application-specific software optimized for targeted use cases and leverage cloud infrastructures to de-
+                ploy these applications to users. Cloud infrastructure provides access to virtualized and/or physical
+                infrastructure services, such as rented virtual machines (VMs) and bare metal hardware operating inside
+                data centers worldwide (e.g., AWS, Azure, and Google Cloud). As a result, building web2 Internet
+                services that can scale to billions of users has never been easier than it is today. However, web2
+                requires that users place explicit trust in centralized entities, a requirement that has become
+                increasingly concerning to society.<br><br>
+
+                To combat this concern, a new Internet age has begun: web3. In the web3 version of the Internet,
+                blockchains have emerged to provide decentralized, immutable ledgers that enable users to interact with
+                one another securely and reliably, all without requiring trust in controlling intermediaries or
+                centralized entities. Similar to how web2 Internet services and applications rely on cloud
+                infrastructure as building blocks, decentralized applications can use blockchains as a decentralized
+                infrastructure layer to reach billions of users across the world.
+                <br><br>
+                However, despite the existence of many blockchains today, widespread adoption of web3 has not yet taken
+                place [3]. While technology continues to advance the industry, existing blockchains are unreliable,
+                impose high transaction fees for users, have low throughput limitations, suffer regular asset losses due
+                to security issues, and cannot support real-time responsiveness. In comparison to how cloud
+                infrastructure has enabled web2 services to reach billions, blockchains have not yet enabled web3
+                applications to do the same.
+                <br><br>
+                <span class="yellow">2. The Hadar vision</span><br>
+                The Hadar vision is to deliver a blockchain that can bring mainstream adoption to web3 and empower an
+                ecosystem of decentralized applications to solve real-world user problems. Our mission is to advance the
+                state-of-the-art in blockchain reliability, safety, and performance by providing a flexible and modular
+                blockchain architecture. This architecture should support frequent upgrades, fast adoption of the latest
+                technology advancements, and first-class support for new and emerging use cases.
+                <br><br>
+                <span class="yellow">3. Overview</span><br>
+                The Hadar blockchain is comprised of a set of validators that jointly receive and process transactions
+                from users using a byzantine fault-tolerant (BFT), proof-of-stake consensus mechanism. Token holders
+                lock up, or stake, tokens in their selected validators. Each validator’s consensus voting weight is
+                proportionate to the amount staked into it. A validator can be active and participate in consensus.
+                Likewise, a validator may also be inactive if it does not have enough stake to participate, rotates out
+                of the validator set, elects to be offline as it synchronizes blockchain state, or is deemed not
+                participating by the consensus protocol due to poor historical performance. Clients are any part of the
+                system that need to submit transactions or query the state and history of the blockchain. Clients can
+                choose to download and verify validator signed proofs of queried data. Full nodes are clients that
+                replicate the transaction and blockchain state from the validators or from other full nodes in the
+                network. They may elect to prune transaction history and blockchain state as desired to reclaim storage.
+                Light clients only maintain the current set of validators and can query partial blockchain state
+                securely, typically from full nodes. Wallets are a common example of a light client.
+                <br><br>
+                <span class="yellow">4. Logical data model</span><br>
+                The ledger state of the Hadar blockchain represents the state of all the accounts. The ledger state is
+                versioned using an unsigned 64-bit integer corresponding to the number of transactions the system has
+                executed. Anyone can submit a transaction to the Hadar blockchain to modify the ledger state. Upon
+                execution of a transaction, a transaction output is generated. A transaction output contains zero or
+                more operations to manipulate the ledger state (called write sets), a vector of resulting events (see
+                Section 5.1.1), the amount of gas consumed, and the executed transaction status.
+                <br><br>
+
+                4.1 Transactions A signed transaction contains the following information:
+                •Transaction authenticator: The sender uses a transaction authenticator that includes one or more
+                digital signatures to verify that a transaction is authenticated.
+                •Sender address: The account address of the sender.
+                •Payload: The payload either refers to an existing entry function on-chain or contains the function to
+                be executed as in lined bytecode (called a script). In addition, a set of input arguments is encoded in
+                byte arrays. For a peer-to-peer transaction, the inputs contain the recipient’s information and the
+                amount transferred to them.
+                •Gas price (in specified currency/gas units): This is the amount the sender is willing to pay per unit
+                of gas to execute the transaction. Gas is a way to pay for compute, networking, and storage. A gas unit
+                is an abstract measurement of computation with no inherent real-world value.
+                •Maximum gas amount: The maximum gas amount is the maximum gas units the transaction is allowed to
+                consume prior to aborting. The account must have at least the gas price multiplied by the maximum gas
+                amount or the transaction will be discarded during validation.
+                •Sequence number: The sequence number of the transaction. This must match the sequence number stored in
+                the sender’s account when the transaction executes. Upon successful transaction execution, the account
+                sequence number is incremented to prevent replay attacks.
+                •Expiration time: A timestamp after which the transaction ceases to be valid.
+                •Chain id: Identifies the blockchain that this transaction is valid for, offering further protection for
+                users to prevent signing errors.
+                <br><br>
+                4.2 Move modules<br>
+                A Move module contains Move bytecode that declares data types (structs) and procedures. It is identified
+                by the address of the account where the module is declared along with a module name. For example, the
+                identifier for the first currency module in Figure 2 is 0x1::coin. A module can depend on other on-chain
+                modules, as shown by the wallet module in Figure 2, enabling code reuse.
+                <br><br>
+                A module must be uniquely named within an account, i.e., each account can declare at most one module
+                with any given name. For example, the account at address 0x1 in Figure 2 could not declare another
+                module named coin. On the other hand, the account at address 0x3 could declare a module named coin and
+                the identifier of this module would be 0x3::coin. Note that 0x1::coin::Coin and 0x3::coin::Coin are
+                distinct types and cannot be used interchangeably nor share common module code. In contrast,
+                0x1::coin::Coin<0x2::wallet::USD> and 0x1::coin::Coin<0x2::wallet::JPY> are different instantiations of
+                        the same generic type that cannot be used interchangeably but can share common module code.
+                        Modules are grouped into packages located at the same address. An owner of this address
+                        publishes the package as a whole on-chain, including the bytecode and package metadata. The
+                        package meta-data determines whether a package can be upgraded or is immutable. For an
+                        upgradeable package, compatibility checks are performed before the upgrade is permitted: no
+                        existing entry point functions must be changed and no resources can be stored in memory.
+                        However, new functions and resources can be added.
+                        The Hadar framework, consisting of the core libraries and configuration for the Hadar
+                        blockchain, is defined as a regular upgradeable package of modules (see Section 9.2).
+                        <br><br>
+                        4.3 Resources<br>
+                        Similar to modules, account addresses can also have data values associated with them. Within
+                        each account address, the values are keyed by their types, with at most one value of each type
+                        belonging to the account. Figure 3 provides an example of this. Address 0x50 holds a single
+                        value, with 0x3::coin::Coin being the fully- qualified type. 0x3 is the address where the coin
+                        module is stored, coin is the name of the module and Coin is the name of the data type. Values
+                        of generic types are also allowed, with different instantiations being treated as distinct
+                        types. This is essential for extensibility, allowing different instantiations to share the same
+                        functional code. The rules for mutating, deleting, and publishing a value are encoded in the
+                        module that defines the data type. Move’s safety and verification rules prevent other code or
+                        entities from directly creating, modifying, or deleting instances of data types defined in other
+                        modules.
+                        <br><br>
+                        Having at most one top-level value of each type under an address may at first sound limiting.
+                        However, this is not a problem in practice as programmers can define wrapper types with other
+                        data as internal fields, thus avoiding any limitations. The Wallet struct in Figure 3 is an
+                        example of how to use wrapper types.
+                        It should also be noted that not all data types can be stored on-chain. For data instances to
+                        qualify as top- level values, the data type must have the key ability. Similarly, the store
+                        ability is required for nested values. Data types with both abilities are also called resources.
+                        <br><br>
+                        4.4 Ledger state<br>
+                        From the perspective of the Move virtual machine (Move VM), each account consists of a set of
+                        values and key-value data structures. These data structures are called table entries and are
+                        stored in the Binary Canonical Serialization format (BCS). This data layout enables developers
+                        to write smart contracts that can operate efficiently on small amounts of data replicated across
+                        a large number of accounts, as well as on large amounts of data stored in a small number of
+                        accounts. Move modules are stored similarly to account data but under an independent namespace.
+                        The genesis ledger state defines the initial set of accounts and their associated state at
+                        blockchain initialization.
+                        At launch, the Hadar blockchain will be represented by a single ledger state. However, as
+                        adoption increases and technology develops, Hadar will scale up the number of shards to increase
+                        throughput (i.e., enable multiple ledger states) and support transactions that move or access
+                        assets across shards. Each ledger state will maintain all on-chain assets for the specific shard
+                        and provide the same account model with a fine-grained, key-value data store offering near-fixed
+                        costs for storage access.
+                        <br><br>
+                        <span class="yellow">5. A safe user experience</span><br>
+                        To reach billions of Internet users, the web3 user experience must be safe and accessible. In
+                        the sections below, we describe several innovations provided by the Hadar blockchain that work
+                        towards this goal.
+                        <br><br>
+                        5.1 Transaction viability protection
+                        Signing a transaction means that the signer authorizes the transaction to be committed and
+                        executed by the blockchain. Occasionally, users may sign transactions unintentionally or without
+                        fully considering all the ways in which their transactions might be manipulated. To reduce this
+                        risk, the Hadar blockchain constrains the viability of every transaction and protects the signer
+                        from unbounded validity. There are currently three different protections provided by the Hadar
+                        blockchain - the sender’s sequence number, a transaction expiration time, and a designated chain
+                        identifier.
+                        <br><br>
+                        5.2 Move-based key management<br>
+                        As discussed in Section 5.2, Hadar accounts support key rotation, an important feature that can
+                        help reduce the risks associated with private key compromise, long-range attacks, and future
+                        advances that might break existing cryptographic algorithms. In addition, Hadar accounts are
+                        also flexible enough to enable new hybrid models of custody. In one such model, a user can
+                        delegate the ability to rotate the account’s private key to one or more custodians and other
+                        trusted entities. A Move module can then define a policy that empowers these trusted entities to
+                        rotate the key under specific circumstances. For example, the entities might be represented by a
+                        k-out- of-n multi-sig key held by many trusted parties and offer key recovery services to
+                        prevent user key loss (e.g., 20% of Bitcoin is currently locked up in unrecoverable accounts
+                        [7]).
+                        <br><br>
+                        Moreover, while many wallets support various key recovery schemes, such as backing up private
+                        keys to cloud infrastructure, multi-party computation, and social recovery, they are typically
+                        implemented without blockchain support (i.e., off-chain). As a result, each wallet needs to
+                        implement its own key management infrastructure and related operations become opaque to users.
+                        In contrast, supporting key management functionality at the Hadar blockchain layer provides full
+                        transparency of all key-related operations and makes it simpler to implement a wallet with rich
+                        key management.
+                        <br><br>
+                        5.3 Pre-signing transaction transparency<br>
+                        Today, wallets provide very little transparency about the transactions they sign. As a result,
+                        users are often easily tricked into signing malicious transactions that may steal funds and have
+                        devastating consequences. This is true even for blockchains that require enumerating all
+                        on-chain data accessed by each transaction. As a result, there are few user safeguards currently
+                        in place, making users vulnerable to a wide variety of attacks.
+                        To address this, the Hadar ecosystem provides services for transaction pre-execution: a
+                        precaution-ary measure that describes to users (in human-readable form) the outcomes of their
+                        transactions prior to signing. Pairing this with a known history of prior attacks and malicious
+                        smart contracts will help to reduce fraud. In addition, Hadar also enables wallets to dictate
+                        constraints on transactions during execution. Violating these constraints will result in the
+                        transactions being aborted, to further protect users from malicious applications or social
+                        engineering attacks.
+                        <br><br>
+                        <span class="yellow">6. Processing</span><br>
+                        6.1 Batch processing<br>
+                        Batch processing is an important efficiency optimization that is part of every phase of
+                        operation in the Hadar blockchain. Transactions are grouped into batches by each validator
+                        during transaction dissemination, and batches are combined into blocks during consensus. The
+                        execution, storage.
+                        <br><br>
+                        6.2 Continuous transaction dissemination<br>
+                        Following the primary insight of Narwhal & Tusk [9], transaction dissemination in the Hadar
+                        blockchain is decoupled from consensus. Validators continuously stream batches of transactions
+                        to each other, utilizing all available network resources concurrently. Each batch distributed by
+                        a validator v is persisted, and a signature on the batch digest is sent back to v. Following the
+                        consensus requirements defined in Section 6.3, any 2f + 1 stake weighted signatures on the batch
+                        digest form a proof of availability (PoAv). Such a proof guarantees that at least f + 1 stake
+                        weighted honest validators have stored the batch, and thus all honest validators will be able to
+                        retrieve it prior to execution.
+                        <br><br>
+                        Infinitely persisting batches of transactions can open a DoS attack vector by causing validators
+                        to run out of storage and crash. To prevent this, each batch of transactions has an associated
+                        timestamp. The timestamp on the batch allows efficient garbage collection at each validator. In
+                        addition, a separate per-validator quota mechanism is designed to protect validators from
+                        running out of space even in the most extreme circumstances, such as under potential byzantine
+                        attacks. Batches also have sizing constraints that are validated prior to agreement to persist
+                        to stable storage. Finally, several optimizations to de-duplicate and cache transactions reduce
+                        storage costs and ensure performant integration with the parallel execution engine.
+                        <br><br>
+                        6.3 Block metadata ordering One common misconception is that consensus is slow and therefore the
+                        primary bottleneck for blockchain throughput and latency. One of the key innovations of the
+                        Hadar blockchain is to decouple non-agreement related tasks out of the consensus phase, such as
+                        transaction dissemination, transaction execution/storage, and ledger certification. By
+                        decoupling transaction dissemination from the consensus phase, ordering can occur with very low
+                        bandwidth (block metadata and proofs only), resulting in high transaction throughput and
+                        minimized latency. Today, the Hadar blockchain leverages the latest iteration of DiemBFTv4 [10],
+                        an optimistically responsive BFT consensus protocol. Consensus in the common case only requires
+                        two network round trips (with round trip times typically less than 300 milliseconds worldwide)
+                        and dynamically adjusts to faulty validators through a leader reputation mechanism [11].
+                        <br><br>
+                        6.3.1 Blockchain time The Hadar blockchain adopts an approximate, agreed-upon, physical
+                        timestamp for every proposed block, and correspondingly, all transactions within that block.
+                        This timestamp enables many important use cases.
+            </div>
+            <br><br>
+            <img class="_anim-items" src="/src/white_paper_img.png" alt="Block-STM">
+            <div class="descr_for_img _anim-items">Figure 6: Block-STM (component-only) benchmarks comparing the number of physical
+                cores with different levels of contention.</div>
+            <div class="second_text text _anim-items">6.4 Parallel transaction execution<br>
+                Once consensus block metadata is ordered, transactions can be executed by any validator, full node, or
+                client. At least 2f + 1 stake weighted validators have veritably persisted transactions for the proposed
+                batches. Since transaction dissemination is continuous, additional honest validators will receive the
+                transaction batches over time. If an honest validator has not received the transactions for the ordered
+                batches by the time it reaches the execution stage, it can download them from the 2f +1 stake weighted
+                validators, knowing that at least f + 1 stake weighted validators ( ≥ half of the stake weighted PoAV
+                signers) are honest. An important goal for any blockchain is to enable as much parallel execution as
+                possible. The Hadar blockchain advances this direction forward from both the data model and the
+                execution engine.
+                <br><br>
+                6.4.1 Parallel data model<br>
+                The Move data model natively supports global addressing of data and modules. Transactions that do not
+                have overlapping conflicts in data and accounts can execute in parallel. Given the pipelined design used
+                by the Hadar blockchain, reordering a group of transactions can reduce the number of conflicts, thereby
+                improving concurrency. Even when transactions modify the same set of on-chain values, much of the
+                transaction execution process can still be parallelized. The Hadar blockchain introduces a new concept,
+                delta writes, that describes a modification to account state rather than the modified account state
+                (e.g., increment an integer rather than simply determine the final value). All of the transaction
+                processing can be completed in parallel, and then delta writes are applied in the correct sequence for
+                conflicting values to ensure deterministic results.
+                Over time, the Hadar blockchain will continue to enhance the data model in ways that improve concurrency
+                (e.g., leverage read/write hints) and also improve ergonomics, making it more natural for developers to
+                create, modify, and compose on-chain values. Move provides flexibility to make these improvements at
+                both the language level and also through platform-specific functionality.
+                <br><br>
+                6.4.2 Parallel execution engine<br>
+                The Block-STM parallel execution engine detects and manages the conflicts for an ordered set of
+                transactions along with optimistic concurrency control to allow for maximum parallelism given a
+                particular ordering [13].
+                Batches of transactions are executed optimistically in parallel and validated post-execution. Un-
+                successful validations lead to re-executions. Block-STM uses a multi-version data structure to avoid
+                write-write conflicts. All writes to the same location are stored along with their versions, which
+                contain their transaction IDs and the number of times the writing transaction was optimistically
+                re-executed. When transaction tx reads a memory location, it obtains from the multi-version data
+                structure the value written to this location by the highest transaction that appears before tx in the
+                preset order, along with the associated version.
+
+                <br><br>
+                <span class="yellow">7. State synchronization</span><br>
+                The Hadar blockchain aims to provide a high throughput, low latency system for all participants in the
+                ecosystem. As a result, the blockchain must offer an efficient state synchronization protocol to
+                disseminate, verify, and persist blockchain data to light clients, full nodes, and validators [14]. In
+                addition, the synchronization protocol must also be tolerant of resource constraints and heterogeneity
+                within the network, accounting for different users and use cases. For example, it must allow archival
+                full nodes to verify and persist the entire blockchain history and state, while also enabling light
+                clients to efficiently track only a small subset of the Hadar blockchain state.
+                <br><br>
+                To achieve this property, the Hadar blockchain leverages the authenticated ledger history and certified
+                state proofs (see Section 7.6.1) offered by the validators, full nodes, and other replicators to provide
+                a flexible and configurable synchronization protocol. Specifically, participants in the network can
+                select different synchronization strategies to optimize for their use cases and requirements.
+
+                <br><br>
+                <span class="yellow">8. Community ownership</span><br>
+                The Hadar blockchain will be owned, operated, and governed by a broad and diverse community. A native
+                Hadar token will be used for transaction and network fees, governance voting on protocol upgrades and
+                on- chain/off-chain processes, and securing the blockchain via a proof-of-stake model. A complete
+                description of Hadar token economics will follow in a future publication.
+
+                <br><br>
+                8.1 Transaction and network fees<br>
+                All Hadar transactions have a gas unit price (specified in Hadar tokens) that allows validators to
+                prioritize the highest value transactions in the network. Moreover, at every stage of the pipelined
+                model, there are multiple opportunities to discard low-value transactions (allowing the blockchain to
+                operate efficiently when at system capacity). Over time, network fees will be deployed to ensure that
+                the costs of using the Hadar blockchain are proportionate to the real-world costs of hardware
+                deployment, maintenance, and node operation.
+                <br><br>
+                8.2 Network governance<br>
+                Every significant feature change and improvement on the Hadar blockchain will go through several phases,
+                including proposal, implementation, testing, and deployment. This structure creates opportunities for
+                relevant parties and stakeholders to provide feedback, share concerns, and offer suggestions. The final
+                phase, deployment, is typically achieved in two steps. First, a software release with the new
+                functionality will be deployed to each node, and second, the functionality will be enabled, e.g., via a
+                feature flag or on-chain configuration variable. Each software deployment by the node operators must be
+                backward compatible, to ensure the new software is interoperable with the supported releases. The
+                process of deploying a new software version may span multiple days, to account for operators in
+                different time zones and any external issues. Once a sufficient number of nodes have been upgraded, the
+                enablement of the new functionality can be triggered by a synchronization point, such as an agreed-on
+                block height or epoch change. In emergency conditions (e.g., when downtime is unavoidable), the
+                enablement can be through a manual and forced change by the node operators, and in the worst cases, a
+                hard fork in the network.
+                <br><br>
+                8.3 Proof-of-stake consensus<br>
+                To participate in transaction validation on the Hadar blockchain, validators must have a minimum
+                required amount of staked Hadar tokens. The staked amounts proportionately affect the 2f + 1 stake
+                weighted PoAv during transaction dissemination as well as vote weights and leader selection during block
+                metadata ordering. Validators decide on the split of rewards between themselves and their respective
+                stakers. Stakers can select any number of validators in which to stake their tokens for a pre-agreed
+                reward split. At the end of every epoch, validators and their respective stakers will receive their
+                rewards via the relevant on-chain Move modules. Any validator operator with sufficient stake can freely
+                join the Hadar blockchain.
+
+                <br><br>
+                <span class="yellow">9. Performance</span><br>
+                As mentioned in Section 6, the Hadar blockchain is able to achieve optimal throughput and hardware
+                efficiency via its parallel, batch optimized, and modular transaction processing pipeline. Additional
+                performance initiatives, such as consensus upgrades, delta writes, transaction hints, and critical path
+                caching, will continue to increase throughput and improve efficiency over time.
+                Today, blockchain throughput is typically measured in transactions per second. However, given the wide
+                range of costs and complexity across transactions and infrastructures, this is an imprecise method to
+                compare systems. Transaction latency is also equally flawed as the starting and ending points of
+                submission to finality are varied across experiments.
+                <br><br>
+                In addition, some systems require apriori knowledge of transaction inputs and outputs and force logical
+                transactions to be split into smaller, less complex transactions. Splitting a transaction results in
+                poor user experiences and artificially impacts latency and throughput, without considering what the
+                developer is trying to accomplish. In contrast, the Hadar approach is to enable developers the freedom
+                to build without limits and to measure throughput and latency with respect to real-world use cases
+                rather than synthetic transactions. The Hadar blockchain will continue to optimize individual validator
+                performance, as well as exper-iment with scaling techniques that add more validators to the network.
+                <br><br>
+                9.1 Homogeneous state sharding<br>
+                Initially, the Hadar blockchain will be launched with a single ledger state. Over time, the Hadar
+                network will take a unique approach to horizontal scalability while still maintaining decentralization.
+                This will occur through multiple sharded ledger states, each offering a homogeneous API and sharding as
+                a first-class concept. The Hadar token will be used for transaction fees, staking, and governance on all
+                shards. Data may be transferred between shards through a homogeneous bridge. Users and developers can
+                choose their own sharding schemes depending on their needs. For example, developers can propose a new
+                shard or cluster users within existing shards to achieve high intra-shard connections. More-over, shards
+                may have different system characteristics.
+            </div>
+        </div>
+    </div>
+    <div class="connect_with_us" id="connect_block">
+        <div class="container">
+            <div class="connect_wrap _anim-items">
+                <div class="connect_title _anim-items _anim-show"><span>SPEAK WITH</span> A PRODUCT EXPERT</div>
+                <div class="connect_descr _anim-items _anim-show">Hadar is build by a smart team of financial analysts, data scientists,
+                    blockchain and database engineers passionate about improving and scaling blockchain technologies.
+                </div>
+                <button id="connect_btn" class="connect_btn _anim-items">CONNECT WITH US<span class="flare"></span></button>
+            </div>
+        </div>
+    </div>
+    <div id="connect_modal" class="modal">
+        <span class="close">×</span>
+        <div class="container">
+            <!-- Modal content -->
+            <div class="modal_content">
+                <div class="img_wrap">
+                    <img src="/src/logos/logo.svg">
+                </div>
+                <div class="form_wrap">
+                    <div class="form_title">CONNECT WITH US</div>
+                    <div class="form_descr">Write your question and our team will contact you shortly</div>
+                    <!-- method="/POST" onsubmit="return false;" -->
+                    <form action="" id="con_form2">
+                        <input id="connect_name" type="text" placeholder="Name" onfocus="this.placeholder = ''"
+                            onblur="this.placeholder = 'Name'" required minlength="1">
+                        <input id="connect_telegram" type="text" placeholder="Telegram" onfocus="this.placeholder = ''"
+                            onblur="this.placeholder = 'Telegram'" required minlength="1">
+                            <input class="input_phone" id="connect_phone" type="tel" placeholder="Your Phone" onfocus="this.placeholder = ''" onblur="this.placeholder='Your Phone'" required="/" pattern="\+380\s?[\(]{0,1}[0-9]{2}[\)]{0,1}\s?\d{3}[-]{0,1}\d{2}[-]{0,1}\d{2}">
+                        <textarea id="connect_question" class="question" type="text" placeholder="Your question"
+                            onfocus="this.placeholder = ''" onblur="this.placeholder = 'Your question'" required minlength="1"></textarea>
+                        <button type="submit" id="connect_submit">Submit<span class="flare"></span></button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div class="container">
+            <div class="foot_logo">
+                <a href="#" class="foot_logo_link"><img src="/src/logos/logo.svg" alt="logo" class="foot_logo_img"></a>
+                <div class="social">
+                    <a target=”_blank” href="https://t.me/+rbMi6AkDpFE4NWQy" class="social_logo"><svg class="t-sociallinks__svg" width="25px" height="25px"
+                            viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M50 100c27.6142 0 50-22.3858 50-50S77.6142 0 50 0 0 22.3858 0 50s22.3858 50 50 50Zm3.431-73.9854c-2.5161.0701-5.171.6758-7.0464 2.4577-1.5488 1.4326-2.329 3.5177-2.5044 5.602-.0534 1.4908-.0458 2.9855-.0382 4.4796.0058 1.1205.0115 2.2407-.0085 3.3587-.6888.005-1.3797.0036-2.0709.0021-.9218-.0019-1.8441-.0038-2.7626.0096 0 .8921.0013 1.7855.0026 2.6797.0026 1.791.0052 3.5853-.0026 5.3799.9185.0134 1.8409.0115 2.7627.0096.6912-.0015 1.382-.0029 2.0708.0021.0155 3.5565.0127 7.1128.0098 10.669-.0036 4.4452-.0072 8.8903.0252 13.3354 1.8903-.0134 3.7765-.0115 5.6633-.0095 1.4152.0014 2.8306.0028 4.2484-.0022.0117-4.0009.0088-7.9986.0058-11.9963-.0029-3.9979-.0058-7.9957.0059-11.9964.9533-.005 1.9067-.0036 2.86-.0021 1.2713.0019 2.5425.0038 3.8137-.0096.396-2.679.7335-5.3814.9198-8.0947-1.2576-.0058-2.5155-.0058-3.7734-.0058-1.2578 0-2.5157 0-3.7734-.0059 0-.4689-.0007-.9378-.0014-1.4066-.0022-1.4063-.0044-2.8123.0131-4.2188.198-1.0834 1.3158-1.9104 2.3992-1.8403h5.1476c.0117-2.8069.0117-5.602 0-8.4089-.6636 0-1.3273-.0007-1.9911-.0014-1.9915-.0022-3.9832-.0044-5.975.0131Z"
+                                fill="#525252"></path>
+                        </svg></a>
+
+                    <a target=”_blank” href="https://twitter.com/CryptoHadar" class="social_logo"><svg class="t-sociallinks__svg" width="25px" height="25px"
+                            viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M50 100c27.614 0 50-22.386 50-50S77.614 0 50 0 0 22.386 0 50s22.386 50 50 50Zm19.091-63.636c2.046-.227 4.09-.682 5.909-1.591-1.364 2.045-2.954 3.863-5.228 5v1.364c0 13.636-10.227 29.09-29.09 29.09-5.909 0-11.137-1.59-15.682-4.545.909.227 1.59.227 2.5.227 4.773 0 9.318-1.59 12.727-4.318-4.545 0-8.181-2.955-9.545-7.046.455.227 1.137.227 1.818.227.907 0 1.814-.226 2.72-.453l.008-.002c-4.772-.909-8.182-5-8.182-10v-.227a8.196 8.196 0 0 0 4.546 1.364c-2.727-1.819-4.546-4.773-4.546-8.41 0-2.045.455-3.636 1.364-5.226 5.227 6.136 12.727 10.227 21.136 10.682-.227-.682-.227-1.364-.227-2.273A10.184 10.184 0 0 1 59.546 30c2.954 0 5.681 1.136 7.5 3.181 2.5-.454 4.545-1.362 6.59-2.5-.909 2.501-2.5 4.319-4.545 5.683Z"
+                                fill="#525252"></path>
+                        </svg></a>
+
+                    <a target=”_blank” href="https://t.me/+rbMi6AkDpFE4NWQy" class="social_logo"><svg class="t-sociallinks__svg" width="25px" height="25px"
+                            viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M50 100C77.6142 100 100 77.6142 100 50C100 22.3858 77.6142 0 50 0C22.3858 0 0 22.3858 0 50C0 77.6142 22.3858 100 50 100ZM25 39.3918C25 31.4558 31.4566 25 39.3918 25H60.6082C68.5442 25 75 31.4566 75 39.3918V60.8028C75 68.738 68.5442 75.1946 60.6082 75.1946H39.3918C31.4558 75.1946 25 68.738 25 60.8028V39.3918ZM36.9883 50.0054C36.9883 42.8847 42.8438 37.0922 50.0397 37.0922C57.2356 37.0922 63.0911 42.8847 63.0911 50.0054C63.0911 57.1252 57.2356 62.9177 50.0397 62.9177C42.843 62.9177 36.9883 57.1252 36.9883 50.0054ZM41.7422 50.0054C41.7422 54.5033 45.4641 58.1638 50.0397 58.1638C54.6153 58.1638 58.3372 54.5041 58.3372 50.0054C58.3372 45.5066 54.6145 41.8469 50.0397 41.8469C45.4641 41.8469 41.7422 45.5066 41.7422 50.0054ZM63.3248 39.6355C65.0208 39.6355 66.3956 38.2606 66.3956 36.5646C66.3956 34.8687 65.0208 33.4938 63.3248 33.4938C61.6288 33.4938 60.2539 34.8687 60.2539 36.5646C60.2539 38.2606 61.6288 39.6355 63.3248 39.6355Z"
+                                fill="#525252"></path>
+                        </svg></a>
+
+                    <a target=”_blank” href="https://t.me/+rbMi6AkDpFE4NWQy" class="social_logo"><svg class="t-sociallinks__svg" width="25px" height="25px"
+                            viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M50 100c27.614 0 50-22.386 50-50S77.614 0 50 0 0 22.386 0 50s22.386 50 50 50Zm17.9-67.374c3.838.346 6 2.695 6.474 6.438.332 2.612.626 6.352.626 10.375 0 7.064-.626 11.148-.626 11.148-.588 3.728-2.39 5.752-6.18 6.18-4.235.48-13.76.7-17.992.7-4.38 0-13.237-.184-17.66-.552-3.8-.317-6.394-2.44-6.916-6.218-.38-2.752-.626-6.022-.626-11.222 0-5.788.209-8.238.7-10.853.699-3.732 2.48-5.54 6.548-5.96C36.516 32.221 40.55 32 49.577 32c4.413 0 13.927.228 18.322.626Zm-23.216 9.761v14.374L58.37 49.5l-13.686-7.114Z"
+                                fill="#525252"></path>
+                        </svg></a>
+                      <a target=”_blank” class="tg_icon" href="https://t.me/+rbMi6AkDpFE4NWQy" class="social_logo"><img src="../src/tg-icon.png" alt="tg icon"></a>
+                </div>
+                <div class="copyright">Copyright © 2023. All Rights Reserved by HADAR</div>
+            </div>
+            <div class="foot_descr">
+                <div class="foot_descr_title">CREATE A NEW WORLD</div>
+                <div class="foot_descr_text">Hadar is on a Mission to Create Global Mass Adoption of Blockchain & Web 3
+                    Technology.</div>
+            </div>
+            <div class="foot_descr">
+                <div class="foot_descr_title">OUR MISSION</div>
+                <div class="foot_descr_text">Hadar aims to seamlessly bring the masses to Web3 and help users leverage
+                    the power of Blockchain & Web3 Ecosystem.</div>
+            </div>
+            <div class="foot_menu">
+                <div class="foot_menu_title">MENU</div>
+                <a href="#" class="foot_menu_link">White Paper</a>
+                <a href="../index.html#abouthadar" class="foot_menu_link">About Hadar</a>
+                <a href="../index.html#roadmap" class="foot_menu_link">Road Map</a>
+                <a href="../index.html#token" class="foot_menu_link">Token</a>
+                <a href="../index.html#faq" class="foot_menu_link">FAQ</a>
+                <a target=”_blank” href=" https://pancakeswap.finance/swap?outputCurrency=0x16A1f04D58c3B51AC0cea9255fce2c77FCcCFD61" class="foot_menu_link">Buy on PancakeSwap</a>
+            </div>
+        </div>
+    </footer>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+    crossorigin="anonymous"></script>
+  <script type="text/javascript" src="../script/whitepaper.js"></script>
+  <script src="https://kit.fontawesome.com/07b44954f6.js" crossorigin="anonymous"></script>
+  <script src="../script/phone_mask.js" type="text/javascript" ></script>
+  <script>
+    $('.input_phone').mask('+380(99)999-99-99');
+
+    $.fn.setCursorPosition = function(pos) {
+      if ($(this).get(0).setSelectionRange) {
+        $(this).get(0).setSelectionRange(pos, pos);
+      } else if ($(this).get(0).createTextRange) {
+        var range = $(this).get(0).createTextRange();
+        range.collapse(true);
+        range.moveEnd('character', pos);
+        range.moveStart('character', pos);
+        range.select();
+      }
+    };
+
+    $('input[type="tel"]').click(function(){
+      let str = (this).value;
+      str2 = str.slice(-1);
+      if( str2 === '_' ){
+        $(this).setCursorPosition(str.indexOf('_'));  // set position number
+      }
+      else {
+        $(this).setCursorPosition(17);
+      }
+      });
+  </script>
+</body>
